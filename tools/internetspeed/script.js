@@ -4,7 +4,7 @@ const speedDisplay = document.getElementById("speedDisplay");
 startBtn.addEventListener("click", function() {
     const xhr = new XMLHttpRequest();
     const startTime = Date.now();
-    xhr.open("GET", "https://github.com/sakusdev/internetspeedfile_/raw/main/.txt", true);
+    xhr.open("GET", "https://github.com/sakusdev/internetspeedfile_/raw/main/inter.bin", true);
     xhr.responseType = "blob";
     xhr.onload = function() {
         const endTime = Date.now();
