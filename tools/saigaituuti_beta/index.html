@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Disaster Notification</title>
+  <style>
+    /* 通知用のスタイル */
+    #notification {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ff6347;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 18px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="notification">災害情報を取得中...</div>
+
+  <script>
+    // XMLデータを取得するためのAjaxリクエスト
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://www.jma.go.jp/bosai/xml/warn/000_body_warning.xml', true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        // 取得したXMLデータを解析する
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
+        const warnings = xmlDoc.getElementsByTagName('Warning');
+
+        // 災害情報を確認する
+        for (let i = 0; i < warnings.length; i++) {
+          const warning = warnings[i];
+          const title = warning.getElementsByTagName('Title')[0].textContent;
+          if (title.indexOf('警報') !== -1 || title.indexOf('注意報') !== -1) {
+            // 警報または注意報が発表された場合、通知を表示する
+            const notification = document.getElementById('notification');
+            notification.textContent = title;
+            notification.style.display = 'block';
+            break;
+          }
+        }
+      }
+    };
+    xhr.send();
+  </script>
+</body>
+</html>
