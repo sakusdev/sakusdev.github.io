@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "chromiumをインストールするbatスクリプトを作ってみた。"
+date:   2023-04-27 19:50:00 +0900
+categories: dev
+---
+chromiumをインストールするbatスクリプトを作ってみた。
+
+[コード]
+
+※注意点
+"必ず"新規のディレクトリに入れて起動してください。
+
+[コード]:https://raw.githubusercontent.com/sakusdev/sakusdev.github.io/main/chromium.bin

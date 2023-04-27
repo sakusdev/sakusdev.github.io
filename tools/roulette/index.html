@@ -1,0 +1,58 @@
+
+<html>
+<head>
+<style>
+body {
+  background-color: #f0f0f0;
+}
+
+#container {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  border: 1px solid #999;
+  float: left;
+  margin: 10px;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+</style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="clearfix"></div>
+    <script>var canvas;
+        var ctx;
+        
+        function init() {
+          canvas = document.getElementById("canvas");
+          ctx = canvas.getContext("2d");
+        }
+        
+        function draw() {
+          ctx.beginPath();
+          ctx.moveTo(20, 20);
+          ctx.lineTo(200, 20);
+          ctx.stroke();
+        }
+        
+        init();
+        draw();</script>
+  </div>
+</body>
+</html>
