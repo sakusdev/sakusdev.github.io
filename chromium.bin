@@ -1,8 +1,0 @@
-mkdir %cd%\chromium
-bitsadmin /transfer job1 https://commondatastorage.googleapis.com/chromium-browser-snapshots/Win_x64/1134180/chrome-win.zip %CD%\chromium\chromium.zip
-cd %cd%\chromium\
-powershell expand-archive -path "chromium.zip" -destinationpath "%CD%\chromium"
-cd .. 
-xcopy %cd%\chromium\chromium\chrome-win
-rmdir chromium /S /Q
-powershell New-Item -ItemType SymbolicLink -Path "%USERPROFILE%\DESKTOP" -Name "chromium" -Value "%CD%\chrome.exe" 
