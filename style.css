@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 #bigandred
 {
     color: red;
@@ -28,4 +29,20 @@
     padding-right: 0.5em;
     
 
+}
+html
+{   
+font-family: 'Kosugi Maru', sans-serif;
+
+}
+#counter
+{
+    text-align: center;
+    color: #333;
+    font-size: 48px  
+    
+}
+#counter_2
+{
+    text-align: center;
 }
