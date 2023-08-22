@@ -1,18 +1,12 @@
 window.onload = function() {
   var counterElement = document.getElementById('counter');
-  var count = localStorage.getItem('count') || 0;
 
-  function incrementCounter() {
-    count++;
+  function updateCounter(count) {
     counterElement.innerText = count;
-    localStorage.setItem('count', count);
   }
 
-  incrementCounter();
+  fetch('https://zealous-near-biology.glitch.me:4000', { method: 'POST' })
+    .then(response => response.json())
+    .then(data => updateCounter(data.count))
+    .catch(error => console.error(error));
 };
-
- function resetCount() {
-    count = 0;
-    counterElement.innerText = count;
-    localStorage.removeItem('count');
-  }

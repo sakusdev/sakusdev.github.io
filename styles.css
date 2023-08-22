@@ -1,0 +1,57 @@
+/* Reset some default styles */
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+body, html {
+    font-family: 'Kosugi Maru', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d6ffff;
+}
+.atag{
+font-size:24px;
+
+}
+p, h1 ,h2 ,h4 ,h5 ,h6 {
+text-align: center;
+}
+.container {
+    display: flex;
+}
+
+.sidebar {
+    height: 100vh; /* 画面の高さいっぱいに表示 */
+    width: 175px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -250px; /* 初期状態では非表示 */
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.content {
+    flex-grow: 1; /* コンテンツエリアが残りのスペースを埋める */
+    padding: 10px;
+    text-align: right ;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
